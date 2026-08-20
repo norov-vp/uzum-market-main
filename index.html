@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzum Market Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
+            <h3><i class="fas fa-store"></i> Uzum Pro</h3>
+        </div>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search" placeholder="Search products...">
+        </div>
+        <div class="header-right">
+            <button class="icon-btn" onclick="toggleDark()" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="cart-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge" id="count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-store"></i> Uzum Pro</h3>
+            <button onclick="toggleSidebar()"><i class="fas fa-times"></i></button>
+        </div>
+        <nav>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-tag"></i> Discounts</a>
+            <a href="#"><i class="fas fa-star"></i> Popular</a>
+            <a href="#"><i class="fas fa-clock"></i> New</a>
+            <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+        </nav>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- PRODUCTS -->
+    <main>
+        <div class="banner">
+            <div class="banner-content">
+                <h1>Super Sale!</h1>
+                <p>Get 20% off on all products</p>
+                <button class="btn-primary">Learn More</button>
+            </div>
+        </div>
+        <div class="section-header">
+            <h2>Popular Products</h2>
+            <a href="#">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="products" id="products"></div>
+    </main>
+
+    <!-- CART -->
+    <div class="cart" id="cart">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> My Cart</h2>
+            <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <h3 id="total">Total: 0 UZS</h3>
+            <button class="btn-primary" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
