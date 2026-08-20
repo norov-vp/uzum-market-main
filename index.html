@@ -1,94 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzum Market Pro</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Uzum Market | Premium Shopping</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
 
+    <!-- ========================== -->
+    <!-- PRELOADER ANIMATION -->
+    <!-- ========================== -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="loader-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="loader-ring"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- ========================== -->
     <!-- HEADER -->
-    <header>
-        <div class="header-left">
-            <i class="fas fa-bars menu-icon" onclick="toggleSidebar()"></i>
-            <h3><i class="fas fa-store"></i> Uzum Pro</h3>
-        </div>
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="search" placeholder="Search products...">
-        </div>
-        <div class="header-right">
-            <button class="icon-btn" onclick="toggleDark()" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="cart-btn" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="badge" id="count">0</span>
-            </button>
+    <!-- ========================== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                <span>Uzum</span> Market
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search products, brands, categories..." id="searchInput">
+            </div>
+            <div class="header-actions">
+                <div class="action-item" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </div>
+                <div class="action-item profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Account</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3><i class="fas fa-store"></i> Uzum Pro</h3>
-            <button onclick="toggleSidebar()"><i class="fas fa-times"></i></button>
+    <!-- ========================== -->
+    <!-- CATEGORY NAVIGATION -->
+    <!-- ========================== -->
+    <nav class="category-nav" id="categoryNav">
+        <div class="container category-container">
+            <ul class="category-list">
+                <li><a href="#" class="active" data-category="all"><i class="fas fa-th"></i> All</a></li>
+                <li><a href="#" data-category="electronics"><i class="fas fa-mobile-alt"></i> Electronics</a></li>
+                <li><a href="#" data-category="fashion"><i class="fas fa-tshirt"></i> Fashion</a></li>
+                <li><a href="#" data-category="footwear"><i class="fas fa-shoe-prints"></i> Footwear</a></li>
+                <li><a href="#" data-category="home"><i class="fas fa-couch"></i> Home & Living</a></li>
+                <li><a href="#" data-category="books"><i class="fas fa-book"></i> Books</a></li>
+                <li><a href="#" data-category="sports"><i class="fas fa-futbol"></i> Sports</a></li>
+                <li><a href="#" data-category="accessories"><i class="fas fa-gem"></i> Accessories</a></li>
+            </ul>
         </div>
-        <nav>
-            <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-tag"></i> Discounts</a>
-            <a href="#"><i class="fas fa-star"></i> Popular</a>
-            <a href="#"><i class="fas fa-clock"></i> New</a>
-            <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
-        </nav>
-    </div>
-    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    </nav>
 
-    <!-- PRODUCTS -->
-    <main>
-        <div class="banner">
-            <div class="banner-content">
-                <h1>Super Sale!</h1>
-                <p>Get 20% off on all products</p>
-                <button class="btn-primary">Learn More</button>
+    <!-- ========================== -->
+    <!-- HERO BANNER WITH ANIMATION -->
+    <!-- ========================== -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <div class="hero-content">
+                        <span class="hero-badge">🔥 Mega Sale</span>
+                        <h1>Premium <span>Tech</span> & <span>Fashion</span></h1>
+                        <p>Discover the latest trends with up to 70% off on top brands</p>
+                        <a href="#" class="btn-primary btn-hero">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-image">
+                        <div class="floating-element e1"><i class="fas fa-laptop"></i></div>
+                        <div class="floating-element e2"><i class="fas fa-headphones"></i></div>
+                        <div class="floating-element e3"><i class="fas fa-watch"></i></div>
+                        <div class="floating-element e4"><i class="fas fa-camera"></i></div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBrgRm5-JumC13yklpzex3Y-1oy2C1u3ashiEWR30qQw&s" alt="Hero">
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <span class="hero-badge">🚀 New Arrivals</span>
+                        <h1>Latest <span>Gadgets</span> & <span>Style</span></h1>
+                        <p>Be the first to get the newest products from world-class brands</p>
+                        <a href="#" class="btn-primary btn-hero">
+                            <span>Explore</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-image">
+                        <div class="floating-element e1"><i class="fas fa-phone"></i></div>
+                        <div class="floating-element e2"><i class="fas fa-tablet"></i></div>
+                        <div class="floating-element e3"><i class="fas fa-tv"></i></div>
+                        <div class="floating-element e4"><i class="fas fa-diamond"></i></div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8WwCAmclzxy7Oz7uRlM9JswgwpR8dWjwhEMTJfD8hg&s=10" alt="Hero">
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <span class="hero-badge">🎯 Weekly Deals</span>
+                        <h1>Exclusive <span>Offers</span> Every Week</h1>
+                        <p>Don't miss out on our handpicked deals just for you</p>
+                        <a href="#" class="btn-primary btn-hero">
+                            <span>View Deals</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-image">
+                        <div class="floating-element e1"><i class="fas fa-gift"></i></div>
+                        <div class="floating-element e2"><i class="fas fa-tag"></i></div>
+                        <div class="floating-element e3"><i class="fas fa-star"></i></div>
+                        <div class="floating-element e4"><i class="fas fa-fire"></i></div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJcq5W_yBOIYmbMs6RtgyWTo_CSnIm_hJpiwdwt63ETA&s=10" alt="Hero">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-controls">
+                <span class="hero-dot active" data-slide="0"></span>
+                <span class="hero-dot" data-slide="1"></span>
+                <span class="hero-dot" data-slide="2"></span>
             </div>
         </div>
-        <div class="section-header">
-            <h2>Popular Products</h2>
-            <a href="#">View All <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="products" id="products"></div>
-    </main>
+    </section>
 
-    <!-- CART -->
-    <div class="cart" id="cart">
-        <div class="cart-header">
-            <h2><i class="fas fa-shopping-cart"></i> My Cart</h2>
-            <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-body" id="cartItems">
-            <div class="empty-cart">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Your cart is empty</p>
+    <!-- ========================== -->
+    <!-- FEATURES / STATS -->
+    <!-- ========================== -->
+    <section class="features">
+        <div class="container features-container">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                <h3>Fast Delivery</h3>
+                <p>Free shipping on orders over $50</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Secure Payment</h3>
+                <p>100% secure transactions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>24/7 Support</h3>
+                <p>Dedicated customer service</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-undo-alt"></i></div>
+                <h3>Easy Returns</h3>
+                <p>30-day money back guarantee</p>
             </div>
         </div>
-        <div class="cart-footer">
-            <h3 id="total">Total: 0 UZS</h3>
-            <button class="btn-primary" onclick="checkout()">Checkout</button>
+    </section>
+
+    <!-- ========================== -->
+    <!-- PRODUCTS SECTION -->
+    <!-- ========================== -->
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">BEST SELLERS</span>
+                    <h2>Popular Products</h2>
+                </div>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Products rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- DEAL OF THE DAY -->
+    <!-- ========================== -->
+    <section class="deal-section">
+        <div class="container deal-container">
+            <div class="deal-content">
+                <span class="deal-tag">⚡ DEAL OF THE DAY</span>
+                <h2>Save Up to <span>50%</span> Today</h2>
+                <p>Limited time offer on premium electronics and fashion</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item"><span id="hours">12</span>h</div>
+                    <div class="countdown-item"><span id="minutes">30</span>m</div>
+                    <div class="countdown-item"><span id="seconds">45</span>s</div>
+                </div>
+                <a href="#" class="btn-primary">Grab the Deal</a>
+            </div>
+            <div class="deal-image">
+                <img src="https://via.placeholder.com/400x300/CC0000/FFFFFF?text=50%25+OFF" alt="Deal of the Day">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- TESTIMONIALS -->
+    <!-- ========================== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">TESTIMONIALS</span>
+                    <h2>What Our Customers Say</h2>
+                </div>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Amazing quality products and super fast delivery! Highly recommend Uzum Market."</p>
+                    <div class="customer">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>John Doe</strong>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best online shopping experience in Uzbekistan. Great prices and excellent service."</p>
+                    <div class="customer">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>Sarah Johnson</strong>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"I love the variety of products available. Found everything I needed in one place."</p>
+                    <div class="customer">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>Mike Wilson</strong>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- FOOTER -->
+    <!-- ========================== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <h4><i class="fas fa-bolt"></i> Uzum Market</h4>
+                <p>Premium online shopping destination with the best selection of products at competitive prices.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Footwear</a></li>
+                    <li><a href="#">Home & Living</a></li>
+                    <li><a href="#">Books</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Uzum Market. All rights reserved.</p>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================== -->
+    <!-- CART MODAL -->
+    <!-- ========================== -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>🛒 Shopping Cart</h2>
+                <span class="close-cart" id="closeCart">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00</span>
+            </div>
+            <button class="btn-primary checkout-btn">Proceed to Checkout</button>
         </div>
     </div>
-    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 
-    <!-- MODAL -->
-    <div class="modal" id="modal">
-        <div class="modal-content" id="modalContent"></div>
-    </div>
+    <!-- ========================== -->
+    <!-- SCROLL TO TOP BUTTON -->
+    <!-- ========================== -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-    <!-- TOAST -->
-    <div class="toast" id="toast"></div>
-
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
